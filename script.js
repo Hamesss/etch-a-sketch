@@ -12,9 +12,14 @@ squares.forEach(div => {
     for (let i = 0; i < 16; i++){
         const newDiv = document.createElement("div")
         newDiv.classList.add("div-child");
+        newDiv.addEventListener("mouseover", addHoveredClass)
         div.appendChild(newDiv);
     }
 
 });
+}
+
+function addHoveredClass(e){
+    this.classList.add("hovered")
 }
 createGrid();
