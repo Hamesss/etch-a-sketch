@@ -13,4 +13,8 @@
     width: 25px;
     height: 25px;
     border: 1px solid black;
+    transition: all 0s;
+}
+.hovered{
+    background-color: black;
 }
