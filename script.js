@@ -1,11 +1,12 @@
-
+function createGrid(){
 for (let i = 0; i < 16; i++){
-    const divLine = document.querySelector(".div-line");
+    const divSquare = document.querySelector(".div-square");
     const div = document.createElement("div");
     div.classList.add("line");
-    divLine.appendChild(div);
+    divSquare.appendChild(div);
 
 }
+
 const squares = document.querySelectorAll(".line");
 squares.forEach(div => {
     for (let i = 0; i < 16; i++){
@@ -15,3 +16,5 @@ squares.forEach(div => {
     }
 
 });
+}
+createGrid();
