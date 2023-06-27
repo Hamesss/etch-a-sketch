@@ -1,3 +1,4 @@
+
 .header{
     display: flex;
     justify-content: space-between;
@@ -37,14 +38,15 @@ button{
 
 .line{
     display: flex;
-    height: 400px;
+    height: 800px;
     flex-direction: column;
     border: 1px solid black;
 }
 
 .div-child{
-    width: 25px;
-    height: 25px;
+    background-color: lightgrey;
+    width: 50px;
+    height: 50px;
     border: 1px solid black;
     transition: all 0s;
 }
