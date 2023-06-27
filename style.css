@@ -1,20 +1,54 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: darkgrey;
+    margin-bottom: 15px;
+}
+h1{
+    margin-left: 20px;
+    font-size: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-text-stroke: 2px black;
+    color: white;
+    
+}
 
+h3{
+    margin-right: 20px;
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-text-stroke: 2px black;
+    color: white;
+    
+}
+.buttons{
+    padding-right: 60px;
+}
+button{
+    width: 180px;
+    height: 80px;
+    
+}
 .div-square{
     display: flex;
     justify-content: center;
 }
+
 .line{
     display: flex;
     height: 400px;
     flex-direction: column;
     border: 1px solid black;
 }
+
 .div-child{
     width: 25px;
     height: 25px;
     border: 1px solid black;
     transition: all 0s;
 }
+
 .hovered{
     background-color: black;
 }
