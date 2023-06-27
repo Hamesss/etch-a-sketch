@@ -1,9 +1,7 @@
 
 .div-line{
     display: flex;
-    justify-content: flex-start;
-    width: 500px;
-    height: 500px;
+    justify-content: center;
 }
 .line{
     display: flex;
