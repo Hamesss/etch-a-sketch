@@ -1,5 +1,7 @@
 const btn1 = document.querySelector(".button1");
 const btn2 = document.querySelector(".button2");
+let currentSize = 16;
+let rainbow = false;
 
 function createGrid(size = 16){
     const hoveredSquares = document.querySelectorAll(".hovered");
@@ -18,7 +20,7 @@ squares.forEach(div => {
         const newDiv = document.createElement("div")
         newDiv.classList.add("div-child");
         newDiv.setAttribute("style", `width: ${800/size}px; height: ${800/size}px;`);
-        newDiv.addEventListener("mouseover", addHoveredClass)
+        newDiv.addEventListener("mouseover", addHoveredClass);
         div.appendChild(newDiv);
     }
 
@@ -26,22 +28,46 @@ squares.forEach(div => {
 }
 
 function addHoveredClass(e){
-    this.classList.add("hovered")
+    if (rainbow == true){
+    this.style.backgroundColor = getRandomColor();
+    }
+    else if (rainbow == false){
+    this.classList.add("hovered");
+    }
 }
 createGrid();
 
 btn1.addEventListener("click", changeGridSize); 
 btn2.addEventListener("click", rainbowColour);
+
 function changeGridSize(e){
     const newSize = parseInt(prompt("Enter a new grid size less than 100"));
     if (typeof newSize == "string" ||newSize < 0 || newSize > 100){
         alert("Invalid grid size!");
     }
     else {
+    currentSize = newSize;
     createGrid(newSize);
     }
 }
 
 function rainbowColour(e){
-    
+    if (rainbow == true){
+        rainbow = false;
+        createGrid(currentSize);
+    }
+    else {
+        rainbow = true;
+        createGrid(currentSize);
+    }
 }
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+  
