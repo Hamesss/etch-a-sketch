@@ -42,11 +42,12 @@ btn2.addEventListener("click", rainbowColour);
 
 function changeGridSize(e){
     const newSize = parseInt(prompt("Enter a new grid size less than 100"));
-    if (typeof newSize == "string" ||newSize < 0 || newSize > 100){
+    if (typeof newSize == "string" || isNaN(newSize) || newSize < 1 || newSize > 100){
         alert("Invalid grid size!");
     }
     else {
     currentSize = newSize;
+    console.log(newSize)
     createGrid(newSize);
     }
 }
@@ -54,10 +55,12 @@ function changeGridSize(e){
 function rainbowColour(e){
     if (rainbow == true){
         rainbow = false;
+        btn2.style.backgroundColor = "white";
         createGrid(currentSize);
     }
     else {
         rainbow = true;
+        btn2.style.backgroundColor = "lightgreen";
         createGrid(currentSize);
     }
 }
