@@ -10,8 +10,7 @@ h1{
     margin-left: 20px;
     font-size: 60px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    -webkit-text-stroke: 2px black;
-    color: white;
+    color: black;
     
 }
 
@@ -24,15 +23,37 @@ h3{
     
 }
 .buttons{
+    display: flex;
+    justify-content: center; 
     padding-right: 60px;
 }
+
 button{
     width: 180px;
     height: 80px;
-    
+    font-family:'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+.page-body{
+    display: flex;
+    justify-content: center;
+}
+.left-column, .right-column{
+    width: 250px;
+    height: 800px;
+    background-color: darkred;
+    display: flex;
+    align-items: flex-end;
+}
+.left-circle{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    color: white;
 }
 .div-square{
     display: flex;
+    flex: 0;
     justify-content: center;
 }
 
