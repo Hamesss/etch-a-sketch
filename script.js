@@ -1,9 +1,15 @@
 const btn1 = document.querySelector(".button1");
 const btn2 = document.querySelector(".button2");
 const btn3 = document.querySelector(".button3");
+const btn4 = document.querySelector(".button4");
 let currentSize = 16;
 let rainbow = false;
 let eraser = false;
+
+btn1.addEventListener("click", changeGridSize);
+btn2.addEventListener("click", rainbowColour);
+btn3.addEventListener("click", erase)
+btn4.addEventListener("click", clear);
 
 function createGrid(size = 16) {
     const hoveredSquares = document.querySelectorAll(".hovered");
@@ -42,9 +48,7 @@ function addHoveredClass(e) {
 }
 createGrid();
 
-btn1.addEventListener("click", changeGridSize);
-btn2.addEventListener("click", rainbowColour);
-btn3.addEventListener("click", erase)
+
 function changeGridSize(e) {
     const newSize = parseInt(prompt("Enter a new grid size less than 100"));
     if (typeof newSize == "string" || isNaN(newSize) || newSize < 1 || newSize > 100) {
@@ -86,6 +90,9 @@ function erase(e) {
     }
 }
 
+function clear(e){
+    createGrid(currentSize);
+}
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
     var color = '#';
