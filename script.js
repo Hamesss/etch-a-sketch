@@ -51,9 +51,10 @@ createGrid();
 
 function changeGridSize(e) {
     const newSize = parseInt(prompt("Enter a new grid size less than 100"));
-    if (typeof newSize == "string" || isNaN(newSize) || newSize < 1 || newSize > 100) {
+    if (typeof newSize == "string" || newSize < 1 || newSize > 100) {
         alert("Invalid grid size!");
     }
+    else if (isNaN(newSize)){}
     else {
         currentSize = newSize;
         createGrid(newSize);
